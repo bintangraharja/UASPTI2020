@@ -1,10 +1,13 @@
 import React from 'react';
-
-const Header = () => {
+import {IconButton, MenuIcon} from 'evergreen-ui';
+import '../App.css'
+function Header(){
     return(
-    <section>
-        <h1>Weather</h1>
-    </section>
+        <section>
+            <div className="header">
+                <IconButton icon={MenuIcon} className="inline"/>
+            </div>
+        </section>
     );
 }
 export default Header;
