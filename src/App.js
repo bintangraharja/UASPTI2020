@@ -1,9 +1,9 @@
 import {Button, PinIcon} from 'evergreen-ui';
 import React, { useState }from 'react';
 import './App.css';
+import AboutUs from './components/aboutus';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Header from './components/header.js';
 import Form from './components/form';
 import Weather from './components/weather';
 
@@ -93,6 +93,8 @@ function App() {
      description = {state.description}
      error = {state.error}
     />
+    <AboutUs />
+        
       </div>
   
     </div>
