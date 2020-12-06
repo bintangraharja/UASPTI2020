@@ -23,7 +23,7 @@ function App() {
   const getWeather = async(e) => {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
-    
+ 
     e.preventDefault();
     const api_call2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=3088f17d218519ad800639fb54e469ed`);
     const location = await api_call2.json();
@@ -53,11 +53,7 @@ function App() {
         error:"Please fill out input fields..."
       })
     }
-  }else{
-    setState({
-      error:"Please fill out input fields..."
-    })
-  }
+  }else{}
   }
   const getCel = () =>{
     setTemp("metric")
