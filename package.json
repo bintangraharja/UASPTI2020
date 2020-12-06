@@ -11,7 +11,10 @@
     "evergreen-ui": "^5.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-side-sheet": "^0.1.19",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

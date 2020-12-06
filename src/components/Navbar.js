@@ -3,20 +3,22 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { SidebarData } from './sidebarData'
-import './Navbar.css';
-import { IconContext } from 'react-icons'
+import '../App.css'
+import {CloudIcon} from 'evergreen-ui';
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)
 
     const showSidebar = () => setSidebar(!sidebar)
     return (
-        <>
-        <IconContext.Provider value={{color: '#fff' }}>
+        <div>
             <div className="navbar">
                 <Link to="#" className="menu-bars">
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>
+                <div className="headertitle">
+                    <CloudIcon size={25}/>HOME<CloudIcon size={25}/>
+                </div>
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
@@ -37,9 +39,8 @@ function Navbar() {
                     })}
                 </ul>
             </nav>
-        </IconContext.Provider>
-        </>
+        </div>
     )
 }
 
-export default Navbar
+export default Navbar;
