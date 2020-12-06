@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import {Button, PinIcon} from 'evergreen-ui';
+import React, { useState }from 'react';
 import './App.css';
 import Header from './components/header.js';
 import Form from './components/form';
@@ -51,15 +52,30 @@ function App() {
   }
   const getCel = () =>{
     setTemp("metric")
+    alert('Please Re-Get')
   }
   const getFah =() =>{
     setTemp("imperial")
+    alert("Please Re-Get")
   }
   return (
     <div className="container">
     <Header/>
-    <h1>What's the waether like?</h1>
-    <Form loadWeather={getWeather}/>
+     
+      {(temp === "metric")?
+       <div className="tempBtn">
+      <Button appearance="primary" intent="success" onClick={getCel} >C</Button>
+      <Button onClick={getFah}>F</Button>
+      </div>
+      :
+      <div className="tempBtn">
+      <Button  onClick={getCel}>C</Button>
+      <Button appearance="primary" intent="success" onClick={getFah}>F</Button>
+      </div>
+      }  
+      <div className="judul">
+        <PinIcon size={30}/>Current's Location
+        <Form loadWeather={getWeather}/>
     <Weather
      temperature= {state.temperature}
      city= {state.city} 
@@ -70,6 +86,8 @@ function App() {
      description = {state.description}
      error = {state.error}
     />
+      </div>
+  
     </div>
     
   );
