@@ -3,6 +3,7 @@ import React, { useState }from 'react';
 import './App.css';
 import AboutUs from './components/aboutus';
 import Navbar from './components/Navbar';
+import Footer from './components/footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Form from './components/form';
 import Weather from './components/weather';
@@ -90,21 +91,21 @@ function App() {
       </div>
       }  
       <div className="judul">
-        <PinIcon size={30}/>Current's Location
+        <PinIcon size={30}/>Location's Weather
         <Form loadWeather={getWeather}/>
-    <Weather
-     temperature= {state.temperature}
-     city= {state.city} 
-     country= {state.country}
-     humidity = {state.humidity}
-     pressure = {state.pressure}
-     icon= {state.icon}
-     description = {state.description}
-     error = {state.error}
-    />
-
-        
+        <Weather
+        temperature= {state.temperature}
+        city= {state.city} 
+        country= {state.country}
+        humidity = {state.humidity}
+        pressure = {state.pressure}
+        icon= {state.icon}
+        description = {state.description}
+        error = {state.error}
+        />
       </div>
+
+    <Footer />
   
     </div>
     
