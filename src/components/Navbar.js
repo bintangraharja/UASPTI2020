@@ -17,7 +17,7 @@ function Navbar() {
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>
                 <div className="headertitle">
-                    <CloudIcon size={25}/>HOME<CloudIcon size={25}/>
+                    <CloudIcon size={30}/>Home<CloudIcon size={30}/>
                 </div>
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>

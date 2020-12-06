@@ -7,15 +7,71 @@
     font-family: 'Lato', sans-serif;
 }
 body{
-    background-color: grey; 
+    background-image: url('/src/components/aset/night\ -\ 3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-.header{
-    background-color: khaki;
-    color: grey;
-    font-weight: 300;
-    font-size: 35px;
-    padding : 8px;
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+.ananda{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    padding-top: 30px;
+}
+
+.bintang{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    padding-top: 30px;
+}
+
+.maureen{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    padding-top: 30px;
+}
+
+.rico{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    padding-top: 30px;
+}
+
+.logo{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo:hover{
+    transform: scale(1.5);
+    transition-duration: 0.5s;
 }
 
 .home, .forecast, .aboutus {
@@ -26,20 +82,49 @@ body{
     font-size: 3rem;
 }
 
-
 .tempBtn{
     float: right;
     padding-right: 25px;
     padding-top: 25px;
 }
+
 .judul{
     font-family: cursive;
     font-size: 50px;
     text-align: center;
+    color: khaki;
+}
+
+.inputplace{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.get{
+    width: 100px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #1a83ff;
+}
+
+.get:hover{
+    background-color: khaki;
+    transition-duration: 0.5s;
+}
+
+.kondisi{
+    width: 10%;
 }
 
 .navbar {
-    background-color: khaki;
+    background-color: #1a83ff;
+    color: whitesmoke;
     height: 80px;
     justify-content: flex-start;
     align-items: center;
@@ -92,6 +177,7 @@ body{
 
 .nav-text a:hover{
     background-color: #1a83ff;
+    transition-duration: 0.5s;
 }
 
 .-nav-menu-items {
@@ -114,4 +200,25 @@ span {
 .headertitle{
     text-align: center;
     width: 100%;
+    font-size: 40px;
+    font-family: "Sofia", sans-serif;
+}
+
+.developer{
+    background-image: url('/src/components/aset/developer.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1, h2{
+    color: sienna;
+    font-family: "Sofia", sans-serif;
+}
+
+.source{
+    font-family: monospace;
+    font-size: 32px;
+    color: tan;
 }
