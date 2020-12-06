@@ -6,6 +6,7 @@ function Header(){
         <section>
             <div className="header">
                 <IconButton icon={MenuIcon} className="inline"/>
+                <h1 className="abtus">ABOUT US</h1>
             </div>
         </section>
     );

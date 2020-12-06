@@ -4,14 +4,78 @@
 }
 body{
     background-color: grey; 
+
 }
 .container{
    
 }
 .header{
     background-color: khaki;
-    color: grey;
+    color: black;
     font-weight: 300;
     padding : 8px;
+    
 }
+.abtus{
+    text-align: center;
+    font-size: 40px;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+.ananda{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    padding-top: 30px;
+}
+
+.bintang{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    padding-top: 30px;
+}
+
+
+.maureen{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    padding-top: 30px;
+}
+
+.rico{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    padding-top: 30px;
+}
+
+img{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
