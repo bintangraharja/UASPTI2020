@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Weather = (props) =>{
+
     return(
         <div>
-            {props.country && props.city && <p>Location: 
-                {props.city},{props.country}</p>}
+            {props.country && props.city && <p>Location: {props.city},{props.country}</p>}
             {props.temperature &&<p>Temperature : {props.temperature}</p>}
-            {props.humadity &&<p>Humadity : {props.humadity}</p>}
+            {props.humidity &&<p>Humidity : {props.humidity}</p>}
             {props.pressure &&<p>Pressure : {props.pressure}</p>}
             {props.icon && <img src={`http://openweathermap.org/img/wn/${props.icon}.png`}
             alt="weather icon"/> }

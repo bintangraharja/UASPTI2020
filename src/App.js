@@ -8,7 +8,6 @@ import Form from './components/form';
 import Weather from './components/weather';
 import Forecast from './components/forecast';
 
-
 const api_key = "3088f17d218519ad800639fb54e469ed";
 function App() {
  const [state,setState] =useState({
@@ -25,19 +24,21 @@ function App() {
   const getWeather = async(e) => {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
+ 
     e.preventDefault();
     const api_call2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=3088f17d218519ad800639fb54e469ed`);
     const location = await api_call2.json();
     console.log(api_call2.ok);
     const lat = location.coord.lat;
     const lon = location.coord.lon;
+    if(lat && lon){
     console.log(lat);
     console.log(lon);
     const api_call = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${temp}&appid=${api_key}`);
     const response = await api_call.json();
     console.log(response);
     console.log(api_call.ok);
-    if(lat && lon){
+    if(city && country){
       setState({
         temperature: response.current.temp,
         city: city,
@@ -53,7 +54,12 @@ function App() {
         error:"Please fill out input fields..."
       })
     }
+  }else{
+    setState({
+      error:"Please fill out input fields..."
+    })
   }
+}
   const getCel = () =>{
     setTemp("metric")
     alert('Please Re-Get')
@@ -64,13 +70,12 @@ function App() {
   }
   return (
     <div className="container">
-  
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path='/'  component={Weather}/>
-        <Route exact path='/forecast' component={Forecast}/>
-        <Route exact path='/aboutus' component={AboutUs}/>
+        <Route exact path='/' component={Weather} />
+        <Route exact path='/forecast' component={Forecast} />
+        <Route exact path='/aboutus' component={AboutUs} />
       </Switch>
     </Router>
       {(temp === "metric")?
@@ -97,7 +102,7 @@ function App() {
      description = {state.description}
      error = {state.error}
     />
-    <AboutUs />
+
         
       </div>
   
