@@ -6,11 +6,8 @@ import Form from './components/form';
 import Weather from './components/weather';
 
 const api_key = "3088f17d218519ad800639fb54e469ed";
-
-
-class App extends React.Component {
-  
-  state = {
+function App() {
+ const [state,setState] =useState({
     temperature: "",
     city:"",
     country:"",
@@ -19,14 +16,9 @@ class App extends React.Component {
     icon: "",
     description:"",
     error: ""
-  } 
-  getCel = () =>{
-    setTemp = "metric";
-  }
-  getFah = () =>{
-    temp = "imperial";
-  }
-  getWeather = async(e) => {
+  });
+  const [ temp, setTemp] = useState("metric");
+  const getWeather = async(e) => {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     e.preventDefault();
@@ -42,7 +34,7 @@ class App extends React.Component {
     console.log(response);
     console.log(api_call.ok);
     if(lat && lon){
-      this.setState({
+      setState({
         temperature: response.current.temp,
         city: city,
         country: country,
@@ -53,37 +45,53 @@ class App extends React.Component {
         error: " "
       })
     }else{
-      this.setState({
+      setState({
         error:"Please fill out input fields..."
       })
     }
   }
-  render(){return (
+  const getCel = () =>{
+    setTemp("metric")
+    alert('Please Re-Get')
+  }
+  const getFah =() =>{
+    setTemp("imperial")
+    alert("Please Re-Get")
+  }
+  return (
     <div className="container">
     <Header/>
-      <div className="tempBtn">
-      {(temp = "metric")?  <Button appearance="primary" intent="success" onClick={this.getCel} >C</Button>: <Button onClick={this.getCel} >C</Button>}
-      {(temp = "imperial")? <Button appearance="primary" intent="success" onClick={this.getFah}>F</Button>:<Button onClick={this.getFah}>F</Button>}
-        
+     
+      {(temp === "metric")?
+       <div className="tempBtn">
+      <Button appearance="primary" intent="success" onClick={getCel} >C</Button>
+      <Button onClick={getFah}>F</Button>
       </div>
+      :
+      <div className="tempBtn">
+      <Button  onClick={getCel}>C</Button>
+      <Button appearance="primary" intent="success" onClick={getFah}>F</Button>
+      </div>
+      }  
       <div className="judul">
         <PinIcon size={30}/>Current's Location
-        <Form loadWeather={this.getWeather}/>
+        <Form loadWeather={getWeather}/>
     <Weather
-     temperature= {this.state.temperature}
-     city= {this.state.city} 
-     country= {this.state.country}
-     humidity = {this.state.humidity}
-     pressure = {this.state.pressure}
-     icon= {this.state.icon}
-     description = {this.state.description}
-     error = {this.error}
+     temperature= {state.temperature}
+     city= {state.city} 
+     country= {state.country}
+     humidity = {state.humidity}
+     pressure = {state.pressure}
+     icon= {state.icon}
+     description = {state.description}
+     error = {state.error}
     />
       </div>
   
     </div>
     
-  );}
+  );
 }
+
 
 export default App;
