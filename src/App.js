@@ -6,6 +6,8 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Form from './components/form';
 import Weather from './components/weather';
+import Forecast from './components/forecast';
+
 
 const api_key = "3088f17d218519ad800639fb54e469ed";
 function App() {
@@ -66,7 +68,9 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path='/' />
+        <Route exact path='/'  component={Weather}/>
+        <Route exact path='/forecast' component={Forecast}/>
+        <Route exact path='/aboutus' component={AboutUs}/>
       </Switch>
     </Router>
       {(temp === "metric")?
