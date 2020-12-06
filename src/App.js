@@ -1,11 +1,13 @@
 import {Button, PinIcon} from 'evergreen-ui';
 import React, { useState }from 'react';
 import './App.css';
+import AboutUs from './components/aboutus';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Header from './components/header.js';
 import Form from './components/form';
 import Weather from './components/weather';
+import Forecast from './components/forecast';
+
 
 const api_key = "3088f17d218519ad800639fb54e469ed";
 function App() {
@@ -66,7 +68,9 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path='/' />
+        <Route path='/' exact component={Weather}/>
+        <Route path='/forecast' exact component={Forecast}/>
+        <Route path='/aboutus' exact component={AboutUs}/>
       </Switch>
     </Router>
       {(temp === "metric")?
@@ -93,6 +97,8 @@ function App() {
      description = {state.description}
      error = {state.error}
     />
+    <AboutUs />
+        
       </div>
   
     </div>

@@ -16,7 +16,7 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'About Us',
+        title: 'AboutUs',
         path: '/',
         icon: <AiIcons.AiOutlineIdcard />,
         cName: 'nav-text'
