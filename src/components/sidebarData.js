@@ -4,20 +4,20 @@ import * as WiIcons from "react-icons/wi";
 
 export const SidebarData = [
     {
-        title: 'Home',
+        title: 'Weather',
         path: '/',
         icon: <WiIcons.WiCloudy />,
         cName: 'nav-text'
     },
     {
         title: 'Forecast',
-        path: '/',
+        path: '/forecast',
         icon: <WiIcons.WiDayCloudyHigh />,
         cName: 'nav-text'
     },
     {
         title: 'AboutUs',
-        path: '/',
+        path: '/aboutus',
         icon: <AiIcons.AiOutlineIdcard />,
         cName: 'nav-text'
     },

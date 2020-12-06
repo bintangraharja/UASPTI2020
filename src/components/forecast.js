@@ -2,7 +2,7 @@ import React from 'react'
 
 function Forecast() {
     return (
-        <div>
+        <div className='forecast'>
             
         </div>
     )

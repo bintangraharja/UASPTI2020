@@ -14,7 +14,7 @@ function Navbar() {
         <div>
             <div className="navbar">
                 <Link to="#" className="menu-bars">
-                    <FaIcons.FaBars onClick={ showSidebar}/>
+                    <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>
                 <div className="headertitle">
                     <CloudIcon size={25}/>HOME<CloudIcon size={25}/>

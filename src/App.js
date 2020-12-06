@@ -68,9 +68,9 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path='/' exact component={Weather}/>
-        <Route path='/forecast' exact component={Forecast}/>
-        <Route path='/aboutus' exact component={AboutUs}/>
+        <Route exact path='/'  component={Weather}/>
+        <Route exact path='/forecast' component={Forecast}/>
+        <Route exact path='/aboutus' component={AboutUs}/>
       </Switch>
     </Router>
       {(temp === "metric")?
