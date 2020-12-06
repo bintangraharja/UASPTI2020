@@ -102,12 +102,8 @@ function App() {
      description = {state.description}
      error = {state.error}
     />
-
-        
       </div>
-  
     </div>
-    
   );
 }
 
