@@ -1,12 +1,17 @@
 import './App.css';
-import Header from './components/header.js';
+import Header from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="container">
-    <Header />
-      test haloo
-    </div>
+    <>
+    <Router>
+      <Header />
+      <Switch>
+        <Route path='/' />
+      </Switch>
+    </Router>
+    </>
   );
 }
 
