@@ -1,6 +1,8 @@
 import {Button, PinIcon} from 'evergreen-ui';
 import React, { useState }from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from './components/header.js';
 import Form from './components/form';
 import Weather from './components/weather';
@@ -60,8 +62,12 @@ function App() {
   }
   return (
     <div className="container">
-    <Header/>
-     
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path='/' />
+      </Switch>
+    </Router>
       {(temp === "metric")?
        <div className="tempBtn">
       <Button appearance="primary" intent="success" onClick={getCel} >C</Button>
