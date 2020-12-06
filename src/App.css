@@ -10,6 +10,19 @@ body{
     background-color: khaki;
     color: grey;
     font-weight: 300;
+    font-size: 35px;
     padding : 8px;
 }
-
+.headertitle{
+    text-align: center;
+}
+.tempBtn{
+    float: right;
+    padding-right: 25px;
+    padding-top: 25px;
+}
+.judul{
+    font-family: cursive;
+    font-size: 50px;
+    text-align: center;
+}
