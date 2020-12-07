@@ -4,7 +4,7 @@ import ig from './aset/logo_ig.png';
 
 function AboutUs(){
     return(
-        <div>
+        <div className="developer">
         <h1>Develop by: </h1>
     <div className="ananda">
       <p>Ananda Setiyani</p>
