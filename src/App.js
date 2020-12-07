@@ -12,6 +12,7 @@ import Forecast from './components/forecast';
 const api_key = "3088f17d218519ad800639fb54e469ed";
 function App() {
  const [state,setState] =useState({
+    dt:"",
     temperature: "",
     city:"",
     humidity: "",
@@ -49,22 +50,28 @@ function App() {
   const [ temp, setTemp] = useState("metric");
   const getWeather = async(e) => {
     const city = e.target.elements.city.value;
- 
+    if(city.length < 1){
+      alert("City must longer")
+    }
+    else{
     e.preventDefault();
     const api_call2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3088f17d218519ad800639fb54e469ed`);
     const location = await api_call2.json();
     console.log(api_call2.ok);
+    if(location.cod === "404"){
+      alert("Kota tidak Ditemukan!")
+    }else{
     const lat = location.coord.lat;
     const lon = location.coord.lon;
-    if(lat && lon){
+    if(city){
     console.log(lat);
     console.log(lon);
     const api_call = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${temp}&appid=${api_key}`);
     const response = await api_call.json();
     console.log(response);
     console.log(api_call.ok);
-    if(city){
-      setState({
+    setState({
+        dt: response.current.dt,
         temperature: response.current.temp,
         city: city,
         humidity: response.current.humidity,
@@ -103,13 +110,10 @@ function App() {
       setState({
         error:"Please fill out input fields..."
       })
-    }
-  }else{
-    setState({
-      error:"Please fill out input fields..."
-    })
+    }}
   }
-}
+  }
+
   const getCel = () =>{
     setTemp("metric")
     alert('Please Re-Get')
