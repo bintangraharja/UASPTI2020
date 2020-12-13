@@ -192,12 +192,3 @@ body {
             .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info .hourly .hourly-info div {
               padding: 5px 0; }
 
-.fork {
-  margin: 30px;
-  text-align: center;
-  font-size: 12px;
-  text-transform: uppercase; }
-  .fork a {
-    color: #fff;
-    text-decoration: none;
-    text-align: center; }

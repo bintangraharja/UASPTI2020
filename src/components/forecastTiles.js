@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import DetailedInfo from "./detailinfo";
+import {Collapse, Row} from 'antd';
 
+const { Panel } = Collapse;
 export default class ForecastTiles extends Component {
 
   // Filters the data by date and returns an Object containing a list of 5-day forecast.
@@ -39,21 +41,14 @@ export default class ForecastTiles extends Component {
       <div className="weather-info">
         <div className="min-max">
           <strong>{`${minMax.max}°C`}</strong> / {`${minMax.min}°C`}
-        </div>
-        <div className="more-info">
-          {`Avg. Humidity: ${avgHumdity}%`}
+        
+          {` Avg. Humidity: ${avgHumdity}%`}
         </div>
       </div>
     );
   };
 
-  _showMoreInfo = (index) => {
-    const elm = this.refs[`div-${index}`];
-    const expandedElment = document.querySelector(".expanded");
-
-    elm.classList.add("expanded");
-    expandedElment !== null && expandedElment.classList.remove("expanded");
-  }
+ 
 
   render() {
 
@@ -69,19 +64,21 @@ export default class ForecastTiles extends Component {
           <div
             className={`forecast-tile tile-${i}`}
             key={i}
-            ref={`div-${i}`}
-            onClick={() => {this._showMoreInfo(i)}}
-          >
+            ref={`div-${i}`}>
+            <Collapse>
+            <Row justify="center">
             <div className="primary-info">
-              <div className="icon">
-                <img src={this._getIcon(item)} />
-                {this._getDayInfo(item)}
-              </div>
-              {this._getInfo(item)}
+            <img src={this._getIcon(item)} />
+            {this._getDayInfo(item)}
+            {this._getInfo(item)}
             </div>
+            </Row>
+            <Panel showArrow={false}  >
             <div className="detailed-info" key={i}>
               <DetailedInfo data={item} />
             </div>
+            </Panel>
+            </Collapse>
           </div>
         ))}
       </div>

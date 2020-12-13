@@ -223,5 +223,14 @@ h1, h2{
     font-size: 32px;
     color: tan;
 }
-
+.ToTop{
+    height: 40 !important;
+    width: 40 !important;
+    line-height: '40px' !important;
+    border-radius: 4 !important;
+    background-color: '#1088e9' !important;
+    color: '#fff'!important;
+    text-align: 'center'!important;
+    font-size: 14 !important; 
+}
 
