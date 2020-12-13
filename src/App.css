@@ -7,7 +7,7 @@
     font-family: 'Lato', sans-serif;
 }
 body{
-    background-image: url('/src/components/aset/night\ -\ 3.jpg');
+   background-color: #fff;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -223,3 +223,5 @@ h1, h2{
     font-size: 32px;
     color: tan;
 }
+
+
