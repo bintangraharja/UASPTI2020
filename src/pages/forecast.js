@@ -10,9 +10,9 @@ function Forecast(){
   
   const search = async(e) =>{
   if(e.key === 'Enter'){
-      const data = await fetchForecast(query)
-      setFore(data);
-      console.log(data);
+      const data2 = await fetchForecast(query)
+      setFore(data2);
+      console.log(data2);
       setQuery('');
     }
   }
@@ -21,10 +21,10 @@ function Forecast(){
         <input type="text"  value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search} placeholder="city"></input>
-        {forecast.main && (
+        {forecast.city && (
           <div>
             <h2>
-              {forecast.name}
+            {forecast.city.name}
             </h2>
           </div>
         )}
