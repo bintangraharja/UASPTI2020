@@ -7,7 +7,7 @@
     font-family: 'Lato', sans-serif;
 }
 body{
-    background-image: url('/src/components/aset/night\ -\ 3.jpg');
+    background-color: #ffe2bc;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -95,7 +95,7 @@ p{
     color: khaki;
 }
 
-.inputplace{
+input{
     width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -123,12 +123,16 @@ p{
 }
 
 .navbar {
-    background-color: #1a83ff;
+    background-color: #3797a4;
     color: whitesmoke;
     height: 80px;
     justify-content: flex-start;
     align-items: center;
     display: flex;
+}
+
+.btnmenu, .btnclose{
+    color: whitesmoke;
 }
 
 .menu-bars{
@@ -138,7 +142,7 @@ p{
 }
 
 .nav-menu{
-    background-color: #060b26;
+    background-color: #3797a4;
     width: 200px;
     height: 100vh;
     display: flex;
@@ -185,7 +189,7 @@ p{
 }
 
 .navbar-toggle{
-    background-color: #060b26;
+    background-color: #3797a4;
     width: 100%;
     height: 80px;
     display: flex;
@@ -201,7 +205,12 @@ span {
     text-align: center;
     width: 100%;
     font-size: 40px;
-    font-family: "Sofia", sans-serif;
+    font-family: 'Crimson text', serif;
+}
+
+.home{
+    width: 70px;
+    height: 70px;
 }
 
 .developer{
