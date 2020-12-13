@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { fetchForecast } from '../api/forecast-api';
+import ForecastTiles from '../components/forecastTiles';
 import '../App.css';
 
 
@@ -22,10 +23,11 @@ function Forecast(){
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search} placeholder="city"></input>
         {forecast.city && (
-          <div>
+          <div className="weather-forecast-wrapper">
             <h2>
             {forecast.city.name}
             </h2>
+            <ForecastTiles forecasts={forecast}/>
           </div>
         )}
     </div>
