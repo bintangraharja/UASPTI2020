@@ -14,7 +14,7 @@ body{
 h1, h2, p{
     text-align: center;
     color: black;
-    font-family: "Sofia", sans-serif;
+    font-family: serif;
 }
 
 .headertitle{
@@ -34,18 +34,18 @@ h1, h2, p{
     padding-top: 25px;
 }
 
-/*.judul{
-    font-family: cursive;
-    font-size: 50px;
-    text-align: center;
-    color: khaki;
-}*/
-
 .subtitle{
     text-align: left;
     padding-left: 5%;
     font-size: 32px;
     font-family: 'Crimson text', serif;
+}
+
+.simbol{
+    width: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .home{
@@ -54,7 +54,7 @@ h1, h2, p{
 
 .inputplace{
     margin: auto;
-    width: 50%;
+    width: 30%;
     padding: 12px 20px;
     border-radius: 5px;
 }
@@ -63,21 +63,6 @@ h1, h2, p{
     padding: 30px;
     border-radius: 5px;
 }
-
-/*.get{
-    width: 100px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-radius: 5px;
-    font-weight: bold;
-    color: #1a83ff;
-}
-
-.get:hover{
-    background-color: khaki;
-    transition-duration: 0.5s;
-}*/
 
 .kondisi{
     width: 10%;

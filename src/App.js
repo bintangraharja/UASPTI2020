@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { fetchCurrent } from './api/current-api';
 import './App.css';
+import pressure from './components/aset/pressure.png';
+import humadity from './components/aset/humadity.png';
+import wind from './components/aset/wind.png';
+import pin from './components/aset/pin.png';
 import AboutUs from './pages/aboutus';
 import Forecast from './pages/forecast';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import 'antd/dist/antd.css';
-import { Card, Layout, Row, Col, Divider} from 'antd';
-const {  Content } = Layout;
+import { Card, Layout, Row, Col } from 'antd';
+const { Content } = Layout;
 
 
 function App(){
@@ -37,22 +41,40 @@ const Current = () =>{
   }
   return(
     <Content className="home">
-    <Col span={4} className="subtitle">Home</Col>
+    <div className="subtitle">Home</div>
     <Row justify="center">
-      <Col xs={20} sm={16} md={12} lg={8} xl={4}>
         <input className="inputplace" type="text"  value={query}
         onChange={(e) => setQuery(e.target.value)}
-        onKeyPress={search} placeholder="search city"></input>
-      </Col>
+        onKeyPress={search} placeholder="Search City"></input>
     </Row>
+    {current.main && (
     <Row justify="center">
-        {current.main && (
-            <Card title={current.name} style={{width: 300}}>
-              <p>{current.name}</p>
-              <p>aksfjrhqrkjhasdlnal</p>
-            </Card>
-        )}
+      <div className="site-card-border-less-wrapper">
+        <Card title="Current Weather" style={{ width: 500}}>
+          <h1><img src={pin} className="simbol"/>{current.name},{current.sys.country}</h1>
+          <p>2020 - 12 - 14</p>
+          <h2>{current.main.temp}	&#8451;</h2>
+          <Row gutter={16}>
+          <Col span={8}>
+            <img src={pressure} className="simbol"></img>
+            <p>Pressure</p>
+            <p>{current.main.pressure} hPa</p>
+          </Col>
+          <Col span={8}>
+            <img src={humadity} className="simbol"></img>
+            <p>Humadity</p>
+            <p>{current.main.humidity}%</p>
+          </Col>
+          <Col span={8}>
+            <img src={wind} className="simbol"></img>
+            <p>Wind</p>
+            <p>{current.wind.speed} m/s</p>
+          </Col>
+          </Row>
+        </Card>
+      </div>
     </Row>
+    )}
     </Content>
   );
 }

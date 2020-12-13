@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { fetchForecast } from '../api/forecast-api';
+import ForecastTiles from '../components/forecastTiles';
 import '../App.css';
+import 'antd/dist/antd.css';
+import { Row, Col} from 'antd';
 
 
 function Forecast(){
@@ -10,22 +13,26 @@ function Forecast(){
   
   const search = async(e) =>{
   if(e.key === 'Enter'){
-      const data = await fetchForecast(query)
-      setFore(data);
-      console.log(data);
+      const data2 = await fetchForecast(query)
+      setFore(data2);
+      console.log(data2);
       setQuery('');
     }
   }
   return(
   <div>
-        <input type="text"  value={query}
+    <div className="subtitle">Forecast</div>
+    <Row>
+        <input className="inputplace" type="text"  value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search} placeholder="city"></input>
-        {forecast.main && (
-          <div>
+    </Row>
+        {forecast.city && (
+          <div className="weather-forecast-wrapper">
             <h2>
-              {forecast.name}
+            {forecast.city.name}
             </h2>
+            <ForecastTiles forecasts={forecast}/>
           </div>
         )}
     </div>
