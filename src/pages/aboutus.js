@@ -1,6 +1,6 @@
 import React from 'react';
-import github from './aset/logo_github.png';
-import ig from './aset/logo_ig.png';
+import github from '../components/aset/logo_github.png';
+import ig from '../components/aset/logo_ig.png';
 
 function AboutUs(){
     return(
