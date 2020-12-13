@@ -17,7 +17,7 @@ function Navbar() {
                     <FaIcons.FaBars className="btnmenu" onClick={showSidebar}/>
                 </Link>
                 <div className="headertitle">
-                    HOME
+                    Weather Forecast
                 </div>
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
