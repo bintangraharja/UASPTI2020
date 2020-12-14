@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import DetailedInfo from "./detailinfo";
-import {Collapse, Row} from 'antd';
+import {Collapse} from 'antd';
 
 const { Panel } = Collapse;
 export default class ForecastTiles extends Component {
 
-  // Filters the data by date and returns an Object containing a list of 5-day forecast.
-  _groupByDays = data => {
+  _Days = data => {
     return (data.list.reduce((list, item) => {
       const forecastDate = item.dt_txt.substr(0,10);
       list[forecastDate] = list[forecastDate] || [];
@@ -16,13 +15,15 @@ export default class ForecastTiles extends Component {
     }, {}));
   };
 
-  _getDayInfo = data => {
-    const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  _DayInfo = data => {
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     return daysOfWeek[new Date(data[0].dt * 1000).getDay()];
   };
 
  _getIcon = data => `https://openweathermap.org/img/w/${data[0].weather[0].icon}.png`;
-
+_getDesc = data => {
+  return data[0].weather[0].description;
+}
   _getInfo = (data, min=[], max=[], humidity=[]) => {
     data.map(item => {
       max.push(item.main.temp_max);
@@ -53,27 +54,28 @@ export default class ForecastTiles extends Component {
   render() {
 
     const { forecasts } = this.props;
-    const tiles = Object.values(this._groupByDays(forecasts));
+    const tiles = Object.values(this._Days(forecasts));
 
 
-    const forecastTiles = tiles.length > 5 ? tiles.slice(1, 6) : tiles;
+    const forecastTiles = tiles.length > 5 ? tiles.slice(0, 5) : tiles;
 
     return (
-      <div className="forecast-tiles">
+      <div >
         {forecastTiles.map((item, i) => (
           <div
-            className={`forecast-tile tile-${i}`}
             key={i}
             ref={`div-${i}`}>
             <Collapse>
-            <Row justify="center">
-            <div className="primary-info">
-            <img src={this._getIcon(item)} />
-            {this._getDayInfo(item)}
+            <div className="center">
+              <p>
+            <img src={this._getIcon(item)}/>
+            {this._DayInfo(item)} <br/>
+            {this._getDesc(item)}
             {this._getInfo(item)}
+            </p>
             </div>
-            </Row>
-            <Panel showArrow={false}  >
+            
+            <Panel showArrow={false} >
             <div className="detailed-info" key={i}>
               <DetailedInfo data={item} />
             </div>
