@@ -167,7 +167,16 @@ span {
     transform: scale(1.5);
     transition-duration: 0.5s;
 }
-
+.ToTop{
+    height: 40 !important;
+    width: 40 !important;
+    line-height: '40px' !important;
+    border-radius: 4 !important;
+    background-color: '#1088e9' !important;
+    color: '#fff'!important;
+    text-align: 'center'!important;
+    font-size: 14 !important; 
+}
 .forecast, .aboutus {
     display: flex;
     height: 90vh;
@@ -181,3 +190,18 @@ span {
     font-size: 25px;
     color: black;
 }
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.hourly {
+    display: flex;
+    padding: 25px 0 20px 10px; }
+.hourly-info {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll; }
