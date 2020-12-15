@@ -2,30 +2,20 @@
 
 *{
     box-sizing: border-box;
-    padding: auto;  
-    font-family: serif;
+    margin: 0;
+    padding: 0;  
+    font-family: 'Lato', sans-serif;
 }
+
 body{
-    background-color: #ffe2bc;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: #ffe2bc !important;
+    font-size: 18px;
 }
 
-h1{
-    float: center;
-    padding-left: 10px;
-}
-
-h1, h2{
+h1, h2, p{
     text-align: center;
     color: black;
     font-family: serif;
-}
-
-p{
-    text-align: center;
 }
 
 .headertitle{
@@ -35,12 +25,8 @@ p{
     font-family: 'Crimson text', serif;
 }
 
-.home, .forecast, .aboutus {
-    display: flex;
-    height: 90vh;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
+.btnmenu, .btnclose{
+    color: whitesmoke;
 }
 
 .tempBtn{
@@ -49,14 +35,26 @@ p{
     padding-top: 25px;
 }
 
-.judul{
-    font-family: cursive;
-    font-size: 50px;
-    text-align: center;
-    color: khaki;
+.subtitle{
+    text-align: left;
+    padding-left: 5%;
+    font-size: 32px;
+    font-family: 'Crimson text', serif;
 }
 
-input{
+.simbol{
+    width: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home{
+    background-color: #ffe2bc !important;
+}
+
+.inputplace{
+    margin: auto;
     width: 30%;
     padding: 12px 20px;
     border-radius: 5px;
@@ -78,10 +76,6 @@ input{
     justify-content: flex-start;
     align-items: center;
     display: flex;
-}
-
-.btnmenu, .btnclose{
-    color: whitesmoke;
 }
 
 .menu-bars{
@@ -150,63 +144,55 @@ span {
     margin-left: 16px;
 }
 
-.headertitle{
-    text-align: center;
-    width: 100%;
-    font-size: 40px;
-    font-family: 'Crimson text', serif;
-}
-
-.home{
-    width: 70px;
-    height: 70px;
-}
-
 .developer{
     box-sizing: border-box;
+    background-color: #ffe2bc;
+    align-content: center;
 }
-  
-.column {
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
 
-@media screen and (max-width: 650px) {
+.column{
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 600px) {
     .column {
-      width: 30%;
+      width: 100%;
       display: block;
+      margin-bottom: 20px;
     }
   }
 
-.card {
-    box-shadow: 0 4px 8px 0 black;
+
+.card{
+    box-shadow: 0 2px 8px 0 black;
     background-color: #ffb367;
-    float: left;
-    width: 20%;
-    margin: 8px 8px;
+    padding: 16px;   
+    height: 100%;
 }
 
-section.ant-layout{
-    background-color:  #ffe2bc;
+.card1{
+    box-shadow: 0 2px 8px 0 black;
+    background-color: #FFE277;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
 }
 
-.card::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-.logo{
-    width: 30%;
+.foto{
+    width: 60%;
     display: block;
+    margin-top: 8px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.logo:hover{
-    transform: scale(1.5);
-    transition-duration: 0.5s;
+.logo{
+    width:30% ;
+    display: block;
+    float: left;
 }
 
 .logo:hover{
@@ -231,11 +217,6 @@ section.ant-layout{
     font-size: 3rem;
 }
 
-.source{
-    font-family: monospace;
-    font-size: 25px;
-    color: black;
-}
 .center{
     display: flex;
     align-items: center;
