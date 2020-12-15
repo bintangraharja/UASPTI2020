@@ -2,11 +2,9 @@
 
 *{
     box-sizing: border-box;
-    margin: auto;
     padding: auto;  
     font-family: serif;
 }
-<<<<<<< HEAD
 body{
     background-color: #ffe2bc;
     background-position: center;
@@ -16,20 +14,18 @@ body{
 }
 
 h1{
-    text-align: center;
-    float: left;
+    float: center;
     padding-left: 10px;
-=======
-
-body{
-    background-color: #ffe2bc !important;
->>>>>>> e36bc1b9f74a41ca449a10a3adae1ebb170b3024
 }
 
-h1, h2, p{
+h1, h2{
     text-align: center;
     color: black;
     font-family: serif;
+}
+
+p{
+    text-align: center;
 }
 
 .headertitle{
@@ -39,17 +35,12 @@ h1, h2, p{
     font-family: 'Crimson text', serif;
 }
 
-<<<<<<< HEAD
 .home, .forecast, .aboutus {
     display: flex;
     height: 90vh;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-=======
-.btnmenu, .btnclose{
-    color: whitesmoke;
->>>>>>> e36bc1b9f74a41ca449a10a3adae1ebb170b3024
 }
 
 .tempBtn{
@@ -58,7 +49,6 @@ h1, h2, p{
     padding-top: 25px;
 }
 
-<<<<<<< HEAD
 .judul{
     font-family: cursive;
     font-size: 50px;
@@ -67,28 +57,6 @@ h1, h2, p{
 }
 
 input{
-=======
-.subtitle{
-    text-align: left;
-    padding-left: 5%;
-    font-size: 32px;
-    font-family: 'Crimson text', serif;
-}
-
-.simbol{
-    width: 70px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.home{
-    background-color: #ffe2bc !important;
-}
-
-.inputplace{
-    margin: auto;
->>>>>>> e36bc1b9f74a41ca449a10a3adae1ebb170b3024
     width: 30%;
     padding: 12px 20px;
     border-radius: 5px;
@@ -182,7 +150,6 @@ span {
     margin-left: 16px;
 }
 
-<<<<<<< HEAD
 .headertitle{
     text-align: center;
     width: 100%;
@@ -197,17 +164,9 @@ span {
 
 .developer{
     box-sizing: border-box;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
 }
-
-.container {
-    padding: 0 16px;
-  }
   
 .column {
-    float: left;
     width: 33.3%;
     margin-bottom: 16px;
     padding: 0 8px;
@@ -223,6 +182,13 @@ span {
 .card {
     box-shadow: 0 4px 8px 0 black;
     background-color: #ffb367;
+    float: left;
+    width: 20%;
+    margin: 8px 8px;
+}
+
+section.ant-layout{
+    background-color:  #ffe2bc;
 }
 
 .card::after, .row::after {
@@ -241,33 +207,22 @@ span {
 .logo:hover{
     transform: scale(1.5);
     transition-duration: 0.5s;
-=======
-.developer{
-    background-color: #d8ac9c;
-}
-
-.ananda, .bintang, .maureen, .rico{
-    color:black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px;
-    float: left;
-    width: 25%;
-    padding-top: 30px;
-}
-
-.logo{
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
->>>>>>> e36bc1b9f74a41ca449a10a3adae1ebb170b3024
 }
 
 .logo:hover{
     transform: scale(1.5);
     transition-duration: 0.5s;
 }
-
+.ToTop{
+    height: 40 !important;
+    width: 40 !important;
+    line-height: '40px' !important;
+    border-radius: 4 !important;
+    background-color: '#1088e9' !important;
+    color: '#fff'!important;
+    text-align: 'center'!important;
+    font-size: 14 !important; 
+}
 .forecast, .aboutus {
     display: flex;
     height: 90vh;
@@ -281,3 +236,18 @@ span {
     font-size: 25px;
     color: black;
 }
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.hourly {
+    display: flex;
+    padding: 25px 0 20px 10px; }
+.hourly-info {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll; }
