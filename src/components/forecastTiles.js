@@ -25,10 +25,12 @@ _getDesc = data => {
   return data[0].weather[0].description;
 }
   _getInfo = (data, min=[], max=[], humidity=[]) => {
-    data.list.map(item => {
-      max.push(item.main.temp_max);
-      min.push(item.main.temp_min);
-      humidity.push(item.main.humidity);
+    data.map(item => {
+      return(
+      max.push(item.main.temp_max),
+      min.push(item.main.temp_min),
+      humidity.push(item.main.humidity)
+      )
     });
 
     const minMax = {
