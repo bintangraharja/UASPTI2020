@@ -16,8 +16,8 @@ import {Button} from 'evergreen-ui';
 import axios from 'axios';
 const { Content } = Layout;
 
-const backtop = {height: 40,width: 40,lineHeight: '40px',borderRadius: 4,
-  backgroundColor: '#1088e9',color: '#fff',textAlign: 'center',fontSize: 14,
+const backtop = {height: 40, width: 40, lineHeight: '40px', borderRadius: 4, 
+backgroundColor: '#1088e9', color: '#fff', textAlign: 'center', fontSize: 14,
 };
 export const useCurrentLocation = (options = {}) =>{
 const [error,setError] = useState();
@@ -92,6 +92,7 @@ const Current = () =>{
   }
   return(
     <Content className="home">
+    <div className="subtitle">HOME</div>
     <Row justify="center">
         <input className="inputplace" type="text"  value={query}
         onChange={(e) => setQuery(e.target.value)}
