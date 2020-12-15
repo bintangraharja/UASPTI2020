@@ -15,8 +15,8 @@ import { Card, Layout, Row, Col , BackTop} from 'antd';
 import {Button} from 'evergreen-ui';
 const { Content } = Layout;
 
-const backtop = {height: 40,width: 40,lineHeight: '40px',borderRadius: 4,
-  backgroundColor: '#1088e9',color: '#fff',textAlign: 'center',fontSize: 14,
+const backtop = {height: 40, width: 40, lineHeight: '40px', borderRadius: 4, 
+backgroundColor: '#1088e9', color: '#fff', textAlign: 'center', fontSize: 14,
 };
 function App(){
   return(

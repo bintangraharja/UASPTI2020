@@ -9,6 +9,7 @@
 
 body{
     background-color: #ffe2bc !important;
+    font-size: 18px;
 }
 
 h1, h2, p{
@@ -144,23 +145,54 @@ span {
 }
 
 .developer{
-    background-color: #d8ac9c;
+    box-sizing: border-box;
+    background-color: #ffe2bc;
+    align-content: center;
 }
 
-.ananda, .bintang, .maureen, .rico{
-    color:black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px;
+.column{
     float: left;
     width: 25%;
-    padding-top: 30px;
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+
+.card{
+    box-shadow: 0 2px 8px 0 black;
+    background-color: #ffb367;
+    padding: 16px;   
+    height: 100%;
+}
+
+.card1{
+    box-shadow: 0 2px 8px 0 black;
+    background-color: #FFE277;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+.foto{
+    width: 60%;
+    display: block;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo{
-    width: 50%;
+    width:30% ;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    float: left;
 }
 
 .logo:hover{
@@ -185,11 +217,6 @@ span {
     font-size: 3rem;
 }
 
-.source{
-    font-family: monospace;
-    font-size: 25px;
-    color: black;
-}
 .center{
     display: flex;
     align-items: center;
