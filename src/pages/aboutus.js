@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from 'antd';
+import { Row } from 'antd';
 import github from '../components/aset/logo_github.png';
 import ig from '../components/aset/logo_ig.png';
 import nan from '../components/aset/nan.jpg';

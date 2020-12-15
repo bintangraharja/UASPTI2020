@@ -13,7 +13,7 @@ const DetailedInfo = ({ data }) => {
         <TimeIcon/> {`${getHour(item.dt * 1000)}:00`}
         </div>
         <div>
-          <img src={`https://openweathermap.org/img/w/${item.weather[0].icon}.png`}/>
+          <img src={`https://openweathermap.org/img/w/${item.weather[0].icon}.png`} alt="hourly icon"/>
         </div>
         <div>
           {`${Math.round(item.main.temp)}°C`}

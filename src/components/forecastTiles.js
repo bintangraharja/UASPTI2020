@@ -25,7 +25,7 @@ _getDesc = data => {
   return data[0].weather[0].description;
 }
   _getInfo = (data, min=[], max=[], humidity=[]) => {
-    data.map(item => {
+    data.list.map(item => {
       max.push(item.main.temp_max);
       min.push(item.main.temp_min);
       humidity.push(item.main.humidity);
@@ -68,7 +68,7 @@ _getDesc = data => {
             <Collapse>
             <div className="center">
               <p>
-            <img src={this._getIcon(item)}/>
+            <img src={this._getIcon(item)} alt="icon hourly"/>
             {this._DayInfo(item)} <br/>
             {this._getDesc(item)}
             {this._getInfo(item)}
