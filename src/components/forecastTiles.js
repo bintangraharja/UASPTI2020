@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import DetailedInfo from "./detailinfo";
 import {Collapse} from 'antd';
-
 const { Panel } = Collapse;
+
 export default class ForecastTiles extends Component {
 
   _Days = data => {
@@ -26,9 +26,11 @@ _getDesc = data => {
 }
   _getInfo = (data, min=[], max=[], humidity=[]) => {
     data.map(item => {
-      max.push(item.main.temp_max);
-      min.push(item.main.temp_min);
-      humidity.push(item.main.humidity);
+      return(
+      max.push(item.main.temp_max),
+      min.push(item.main.temp_min),
+      humidity.push(item.main.humidity)
+      )
     });
 
     const minMax = {
@@ -55,8 +57,6 @@ _getDesc = data => {
 
     const { forecasts } = this.props;
     const tiles = Object.values(this._Days(forecasts));
-
-
     const forecastTiles = tiles.length > 5 ? tiles.slice(0, 5) : tiles;
 
     return (
@@ -68,14 +68,14 @@ _getDesc = data => {
             <Collapse>
             <div className="center">
               <p>
-            <img src={this._getIcon(item)}/>
-            {this._DayInfo(item)} <br/>
-            {this._getDesc(item)}
-            {this._getInfo(item)}
-            </p>
+                <img src={this._getIcon(item)} alt="icon hourly"/>
+                {this._DayInfo(item)} <br/>
+                {this._getDesc(item)}
+                {this._getInfo(item)}
+              </p>
             </div>
             
-            <Panel showArrow={false} >
+            <Panel header="Click Here" showArrow={false} >
             <div className="detailed-info" key={i}>
               <DetailedInfo data={item} />
             </div>
