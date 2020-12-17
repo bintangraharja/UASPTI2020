@@ -29,10 +29,14 @@ h1, h2, p{
     color: whitesmoke;
 }
 
+.btnmenu:hover, .btnclose:hover{
+    color: #fa7f72;
+    transition-duration: 0.5s;
+}
+
 .tempBtn{
-    float: right;
-    padding-right: 25px;
-    padding-top: 25px;
+    padding-left: 80%;
+    padding-top: 15px;
 }
 
 .subtitle{
@@ -53,6 +57,13 @@ h1, h2, p{
     background-color: #ffe2bc !important;
 }
 
+.cardhome{
+    width: 100%;
+    border-radius: 5px !important;
+    justify-items: center !important;
+    text-align: center !important;
+}
+
 .inputplace{
     margin: auto;
     width: 30%;
@@ -60,13 +71,10 @@ h1, h2, p{
     border-radius: 5px;
 }
 
-.site-card-border-less-wrapper {
+.site-card-border-less-wrapper{
+    width: 500px !important;
     padding: 30px;
     border-radius: 5px;
-}
-
-.kondisi{
-    width: 10%;
 }
 
 .navbar {
@@ -94,14 +102,16 @@ h1, h2, p{
     top: 0;
     left: -100%;
     transition: 850ms;
+    z-index: 1;
 }
 
-.nav-menu.active {
+.nav-menu.active{
     left: 0;
     transition: 350ms;
+    z-index: 1;
 }
 
-.nav-text {
+.nav-text{
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -110,7 +120,7 @@ h1, h2, p{
     height: 60px;
 }
 
-.nav-text a {
+.nav-text a{
     text-decoration: none;
     color: whitesmoke;
     font-size: 18px;
@@ -123,11 +133,11 @@ h1, h2, p{
 }
 
 .nav-text a:hover{
-    background-color: #1a83ff;
-    transition-duration: 0.5s;
+    background-color: #fa7f72;
+    transition-duration: 0.7s;
 }
 
-.-nav-menu-items {
+.-nav-menu-items{
     width: 100%;
 }
 
@@ -140,7 +150,7 @@ h1, h2, p{
     align-items: center;
 }
 
-span {
+span{
     margin-left: 16px;
 }
 
@@ -156,29 +166,34 @@ span {
     padding: 0 10px;
 }
 
-@media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
-
-
 .card{
     box-shadow: 0 2px 8px 0 black;
     background-color: #ffb367;
     padding: 16px;   
     height: 100%;
+    border-radius: 5px;
+}
+
+.card p{
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .card1{
     box-shadow: 0 2px 8px 0 black;
     background-color: #FFE277;
-    width: 50%;
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
+    border-radius: 5px;
+}
+
+.card1 p:hover{
+    color: #1a5be6;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    transform: scale(1.2);
 }
 
 .foto{
@@ -189,27 +204,21 @@ span {
     margin-right: auto;
 }
 
+.socmed{
+    display: inline-block;
+    text-align: center;
+}
+
 .logo{
-    width:30% ;
-    display: block;
-    float: left;
+    width: 20%;
 }
 
 .logo:hover{
     transform: scale(1.5);
     transition-duration: 0.5s;
 }
-.ToTop{
-    height: 40 !important;
-    width: 40 !important;
-    line-height: '40px' !important;
-    border-radius: 4 !important;
-    background-color: '#1088e9' !important;
-    color: '#fff'!important;
-    text-align: 'center'!important;
-    font-size: 14 !important; 
-}
-.forecast, .aboutus {
+
+.forecast, .aboutus{
     display: flex;
     height: 90vh;
     align-items: center;
@@ -218,17 +227,71 @@ span {
 }
 
 .center{
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center; 
+    background: #d08752;
 }
-.hourly {
+
+.center p{
+    color: whitesmoke;
+}
+
+.detailinfo{
+    background: #d08752;
+}
+
+.hourly{
     display: flex;
-    padding: 25px 0 20px 10px; }
-.hourly-info {
+    padding: 25px 0 20px 10px;
+}
+
+.hourly-info{
     display: flex;
     flex-direction: column;
     width: 20%;
     align-items: center;
     justify-content: center;
-    overflow-x: scroll; }
+    overflow-x: scroll; 
+}
+
+@media screen and (max-width: 600px){
+    .tempBtn{
+        padding-left: 30%;
+        padding-top: 7.5px;
+        justify-items: center !important;
+    }
+    .subtitle{
+        padding-left: 0;
+    }
+    .column{
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .headertitle{
+        font-size: 24px;
+    }
+    .cardhome{
+        width: 100%;
+    }
+    .simbol{
+        width: 35px;
+    }
+    .card1{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .tempBtn{
+        padding-left: 33.3%;
+        justify-items: center !important;
+    }
+    .subtitle{
+        padding-right: 33.3%;
+        padding-top: 5px;
+        padding-left: 0;
+    }
+}

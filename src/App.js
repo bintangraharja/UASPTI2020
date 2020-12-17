@@ -11,7 +11,7 @@ import Forecast from './pages/forecast';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import 'antd/dist/antd.css';
-import { Card, Layout, Row, Col , BackTop} from 'antd';
+import { Card, Layout, Row, Col, BackTop } from 'antd';
 import {Button} from 'evergreen-ui';
 import axios from 'axios';
 const { Content } = Layout;
@@ -50,7 +50,7 @@ const Current = () =>{
   const { location , error} = useCurrentLocation(geolocationOptions);
   const [query,setQuery]= useState('');
   const [current,setCurr]= useState({});
-  
+
   useEffect(()=>{
   if(location){
     const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=3088f17d218519ad800639fb54e469ed`;
@@ -92,30 +92,33 @@ const Current = () =>{
   }
   return(
     <Content className="home">
-    <div className="subtitle">HOME</div>
+    <Row className="headsub" justify="center">
+        <div className="subtitle">HOME</div>
+        {(!fahrenheit.status)?
+          <div className="tempBtn">
+            <Button appearance="primary" intent="success" onClick={getCel} >C</Button>
+            <Button onClick={getFah}>F</Button>
+          </div>
+          :
+          <div className="tempBtn">
+            <Button  onClick={getCel}>C</Button>
+            <Button appearance="primary" intent="success" onClick={getFah}>F</Button>
+          </div>
+        }
+    </Row>
     <Row justify="center">
         <input className="inputplace" type="text"  value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search} placeholder="Search City"></input>
-    
-    {(!fahrenheit.status)?
-       <div className="tempBtn">
-      <Button appearance="primary" intent="success" onClick={getCel} >C</Button>
-      <Button onClick={getFah}>F</Button>
-      </div>
-      :
-      <div className="tempBtn">
-      <Button  onClick={getCel}>C</Button>
-      <Button appearance="primary" intent="success" onClick={getFah}>F</Button>
-      </div>
-      }  
-      </Row>
+    </Row>
     {current.main && (
     <Row justify="center">
       <div className="site-card-border-less-wrapper">
-        <Card title="Current Weather" style={{ width: 500}}>
+        <Card title="Current Weather" className="cardhome">
           <h1><img src={pin} className="simbol" alt="pin"/>{current.name},{current.sys.country}</h1>
-          <p>2020 - 12 - 14</p>
+          <p>blablabla</p>
+          <img className="simbol" alt="weather" src={`https://openweathermap.org/img/w/${current.weather[0].icon}.png`}/>
+          <p>{current.weather[0].description}</p>
           {(!fahrenheit.status)?
           <h2>{current.main.temp}	&#8451;</h2>:
           <h2>{fahrenheit.degree} &#8457;</h2>}
@@ -160,7 +163,5 @@ function App(){
     </Layout>
   )
 }
-
-
 
 export default App;
