@@ -50,7 +50,11 @@ const Current = () =>{
   const { location , error} = useCurrentLocation(geolocationOptions);
   const [query,setQuery]= useState('');
   const [current,setCurr]= useState({});
-
+  const [newdate,setDate] = useState('');
+  const [fahrenheit,setFah]= useState({
+    status:false,
+    degree:'50'
+  });
   useEffect(()=>{
   if(location){
     const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=3088f17d218519ad800639fb54e469ed`;
@@ -59,16 +63,19 @@ const Current = () =>{
       .get(URL)
       .then((response)=>{
         setCurr(response.data);
+        searchTime(response.data);
       });
     }
-    fetchData();
-  }
+    fetchData();    
+   }
   },[location, error]);
 
-  const [fahrenheit,setFah]= useState({
-    status:false,
-    degree:'50'
-  });
+  const searchTime = (current) => {
+    const date = new Date((current.dt*1000 )+ (current.timezone * 1000)).toUTCString().slice(0,22);
+    console.log(date);
+    setDate(date);
+  }
+ 
 
   const getFah = () =>{
     const temp = (current.main.temp * 9 / 5) +32;
@@ -85,9 +92,12 @@ const Current = () =>{
   const search = async(e) =>{
   if(e.key === 'Enter'){
       const data = await fetchCurrent(query)
+      searchTime(data);
       setCurr(data);
       console.log(data);
       setQuery('');
+      
+      
     }
   }
   return(
@@ -116,7 +126,7 @@ const Current = () =>{
       <div className="site-card-border-less-wrapper">
         <Card title="Current Weather" className="cardhome">
           <h1><img src={pin} className="simbol" alt="pin"/>{current.name},{current.sys.country}</h1>
-          <p>blablabla</p>
+          <p>{newdate}</p>
           <img className="simbol" alt="weather" src={`https://openweathermap.org/img/w/${current.weather[0].icon}.png`}/>
           <p>{current.weather[0].description}</p>
           {(!fahrenheit.status)?
