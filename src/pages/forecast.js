@@ -13,6 +13,7 @@ function Forecast(){
   const { location , error} = useCurrentLocation(geolocationOptions);
   const [query,setQuery]= useState('');
   const [forecast,setFore]= useState({});
+  const [newdate,setDate]= useState('');
   
   useEffect(()=>{
     if(location){
@@ -22,6 +23,8 @@ function Forecast(){
         .get(URL)
         .then((response)=>{
           setFore(response.data);
+          searchdate(response.data);
+          console.log(response.data);
         });
       }
       fetchData();
@@ -32,10 +35,16 @@ function Forecast(){
   if(e.key === 'Enter'){
       const data2 = await fetchForecast(query)
       setFore(data2);
-      console.log(data2);
+      searchdate(data2);
       setQuery('');
     }
   }
+
+  const searchdate = data =>{
+    const date = data.list[0].dt_txt.slice(0,10);
+    setDate(date);
+  }
+
   return(
   <Content className="home">
   <div className="subtitle">Forecast</div>
@@ -49,6 +58,7 @@ function Forecast(){
             <h2>
             {forecast.city.name}
             </h2>
+            <p>{newdate}</p>
             <ForecastTiles forecasts={forecast}/>
           </div>
         )}
