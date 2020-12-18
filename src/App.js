@@ -96,8 +96,6 @@ const Current = () =>{
       setCurr(data);
       console.log(data);
       setQuery('');
-      
-      
     }
   }
   return(
@@ -158,7 +156,6 @@ const Current = () =>{
 }
 
 function App(){
-  
   return(
     <Layout>
     <Router>
