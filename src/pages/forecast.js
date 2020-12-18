@@ -24,7 +24,6 @@ function Forecast(){
         .then((response)=>{
           setFore(response.data);
           searchdate(response.data);
-          console.log(response.data);
         });
       }
       fetchData();
