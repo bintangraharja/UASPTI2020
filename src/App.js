@@ -72,7 +72,6 @@ const Current = () =>{
 
   const searchTime = (current) => {
     const date = new Date((current.dt*1000 )+ (current.timezone * 1000)).toUTCString().slice(0,22);
-    console.log(date);
     setDate(date);
   }
  
@@ -94,7 +93,6 @@ const Current = () =>{
       const data = await fetchCurrent(query)
       searchTime(data);
       setCurr(data);
-      console.log(data);
       setQuery('');
     }
   }
